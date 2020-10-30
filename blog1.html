@@ -1,0 +1,123 @@
+<!Doctype html>
+<html>
+
+<head>
+    <title>My blog.com</title>
+    <meta charset="UTF-8">
+    <style type="text/css">
+        body {
+            padding: 20px;
+            background-color: aqua;
+        }
+        
+        h2 {
+            color: blue;
+        }
+        
+        p {
+            color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <header align="center">
+        <h1>Blog on Database Connectivity with Python</h1>
+        <p>By GM Varun |Posted on 30/10/20</p>
+    </header>
+    <br>
+    <h2 align="center">Python Database Connection: Know how to connect with database</h2>
+    <p aria-setsize="20">Databases are critical for storing and processing data even if you consider a powerful programming language like Python. Ever wondered where does this whole large set of data is stored in or fetched from? In this article on “Python database connection”,
+        I’ll talk about the same and take you through the following aspects in detail. </p>
+    <br>
+    <ul>
+        <li>What is a database?</li>
+        <li>What is MySQLdb?</li>
+        <li>How does Python connect to a database?</li>
+        <li>Creating a Database:</li>
+        <li>Database Operations[CRUD]:</li>
+    </ul>
+    <h4>Let’s get started &#128516;</h4>
+    <br>
+    <h2>What is a database?</h2>
+    <p aria-setsize="20">A database is basically a collection of structured data in such a way that it can easily be retrieved, managed and accessed in various ways. One of the simplest forms of databases is a text database. Relational databases are the most popular database
+        system which includes the following:</p>
+    <ol>
+        <li>MySQL</li>
+        <li>Oracle Database</li>
+        <li>SQL server</li>
+        <li>Informix</li>
+        <li>Sybase</li>
+        <li>IBM db2</li>
+        <li>NO SQL</li>
+    </ol>
+    <p aria-setsize="20">Among all these databases, MySQL is one of the easiest databases to work with. Let me walk you through about this in detail</p>
+    <br>
+    <h2>What is MySQLdb?</h2>
+    <p aria-setsize="20">MySQLdb is an open-source freely available relational database management system that uses Structured Query Language. Now one of the most important question here is “What is SQL?”</p>
+    <p aria-setsize="20">SQL (Structured Query Language) is a standard language for relational databases that allow users to do various operations on data like, Manipulating, Creating, Dropping, etc. In a nutshell, SQL allows you to do anything with the data.</p>
+    <p aria-setsize="20">Let’s move ahead and dive deep into Python database connection wherein you will learn how to connect with the database.</p>
+    <br>
+    <h2>How does Python connect to a database? </h2>
+    <p aria-setsize="20">It is very simple to connect Python with the database. Refer the below image which illustrates a Python connection with the database where how a connection request is sent to MySQL connector Python, gets accepted from the database and cursor is executed
+        with result data.</p>
+    <br>
+    <img src="db.png" align="center">
+    <p aria-setsize="20">Before connecting to the MySQL database, make sure you have MySQL installer installed on your computer. It provides a comprehensive set of tools which helps in installing MySQL with the following components:</p>
+    <ol type="i">
+        <li>MySQL server</li>
+        <li>All available connectors</li>
+        <li>MySQL Workbench</li>
+        <li>MySQL Notifier</li>
+        <li>Tools for Excel and Microsoft Visual Studio</li>
+        <li>MySQL Sample Databases</li>
+        <li>MySQL Documentation</li>
+    </ol>
+    <br>
+    <p aria-setsize="20">To download the MySQL installer please go through the following video which talks about the various steps that you need to follow while installing MySQL.</p>
+    <a href="Video.html">How to Install MySQL on Windows10?</a>
+    <p aria-setsize="20">Before proceeding you should make sure you have MySQL db installed on your computer. Refer the below commands for installing MySQL in command prompt and pycharm:</p>
+    <p aria-setsize="20">For the basic commands and programs<a href="basic.html">Click here</a></p>
+    <h2>Creating a Database:</h2>
+    <p aria-setsize="20">Once the database connection is established, you are ready to create your own database which will be acting as a bridge between your python and MySQL server.<br><br> Let’s see the implementation part of it.</p>
+    <p aria aria-setsize="20"><b>Example:</b><br>import mysql.connector<br> mydb=mysql.connector.connect(host="localhost",user="root",passwd="password123")
+
+        <br> mycursor=mydb.cursor()
+        <br> mycursor.execute("create database varundb")</p>
+
+    <p aria-setsize="20"><b>Output:</b><br>C:/Users/GM Varun/PycharmProjects/test1/venv/python-db-conn.py<br> Process finished with exit code 0</p>
+    <p aria-setsize="20"><b>Explanation:</b></p>
+    <ul>
+        <li>In the above program, I have made use of cursor which is basically an object that is used to communicate to your entire MySQL server through which I am able to create my own database.</li>
+        <li>You can see from the output that my database with the name”harshdb” is created which is custom, as you can give any name to your database.</li>
+    </ul>
+    <h2>Database Operations[CRUD]:</h2>
+    <p aria-setsize="20">There are numerous operations a programmer can perform using databases and SQL in order to have sound knowledge of database programming and MySQL.Some of them i Have disscussed below:</p>
+    <ul>
+        <li><b>Create–</b> It is an SQL statement used to create a record in the table or can say it is used for creating a table.</li>
+        <li><b>Read-</b> It is used for fetching useful information from the database.</li>
+        <li><b>Update-</b> This particular SQL statement is used for updating the records in the table or updating the table</li>
+        <li><b>Delete- </b> As the name itself justifies this command is used for deleting the table.</li>
+    </ul>
+    <p aria-setsize="20">Below I have explained create operation only as other operation are easy as create.</p>
+    <p aria-setsize="20"><b>Create Operation:</b></p>
+    <p aria-setsize="20">import mysql.connector<br> mydb=mysql.connector.connect(host="localhost",user="root",passwd="password123",database=harshdb)
+
+        <br> mycursor=mydb.cursor()
+
+        <br> mycursor.execute("create table employee(name varchar(250),sal int(20))")</p>
+    <p aria-setsize="20"><b>Output:</b></p>
+    <p aria-setsize="20">C:UsersGM VaruntPycharmProjectstest1venvScriptspython.exe<br> C:/Users/GM Varun/PycharmProjects/test1/venv/python-db-conn.py<br> Process finished with exit code 0</p>
+    <p aria-setsize="20"><b>Explanation:</b></p>
+    <ul>
+        <li>In the above-given program, I have created a table ’employee’</li>
+        <li>Table employee has two fields ‘name’ and ‘sal’.</li>
+        <li>Here, the User id is “root” and Password is “password123” used for accessing varundb.</li>
+    </ul>
+    <p aria-setsize="20">So we Understood How to coonect database with python.Database connectivity is the vital concept in the web developement projects.So understanding this makes the web development very easy</p>
+
+
+
+</body>
+
+</html>
